@@ -118,7 +118,7 @@ A style ID correspond with a random matrix.
 A character ID correspond with a character.
 
 IDs are loaded in order, and you can use some operands.
-For example, if json file is following:
+For example, if JSON file is following:
 ```
 "style_ids": [
   "0", "4", "21", "10..29:5"
