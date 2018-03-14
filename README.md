@@ -61,7 +61,7 @@ Requirement libraries are written in Dockerfile.
 Install GPU Driver/[NVIDIA Docker](https://github.com/NVIDIA/nvidia-docker) and run following commands:
 ```
 docker build -t fontdesign_gan .
-docker run --runtime=nvidia -it --rm -p 6006:6006 --volume `pwd`:/workdir fontdesign_gan bash
+docker run --runtime=nvidia -it --rm -p 6006:6006 --volume `pwd`:/workdir -w /workdir/ fontdesign_gan
 ```
 
 #### no Docker
