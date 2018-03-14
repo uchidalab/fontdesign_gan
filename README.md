@@ -47,14 +47,19 @@ The auther checked running codes in only following environment:
 
 If you'd like to run with latest environment, revise some files as necessary.
 
+Firstly clone this repository.
+Add `--recursive` because this repository contains submodule ([font2img](https://github.com/uchidalab/font2img))
+```
+git clone --recursive https://github.com/uchidalab/fontdesign_gan
+cd fontdesign_gan
+```
+
 #### with Docker (GPU required)
 
 If you use GPU and Docker, it's easy to set up your environment.
 Requirement libraries are written in Dockerfile.  
 Install GPU Driver/[NVIDIA Docker](https://github.com/NVIDIA/nvidia-docker) and run following commands:
 ```
-git clone https://github.com/uchidalab/fontdesign_gan
-cd fontdesign_gan
 docker build -t fontdesign_gan .
 docker run --runtime=nvidia -it --rm -p 6006:6006 --volume `pwd`:/workdir fontdesign_gan bash
 ```
