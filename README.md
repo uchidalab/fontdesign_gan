@@ -154,13 +154,13 @@ There are many options. Check following table.
 
 |For|Option|Description|Default|
 |:-|:-|:-|:-|
-|Prepare, Train|`--img_width`|width of images|64|
-|Prepare, Train|`--img_height`|height of images|64|
-|Prepare, Train|`--img_dim`|dimension of images|3|
-|Prepare, Train|`--chars_type`|you can choose characters type, "caps" or "hiragana"|"caps"|
-|Train, Generate|`--gpu_ids`|GPU IDs you use. This type is string (ex. "0, 1").|(set automatically)|
+|Prepare, Train|`--img_width`|width of images.|64|
+|Prepare, Train|`--img_height`|height of images.|64|
+|Prepare, Train|`--img_dim`|dimension of images.|3|
+|Prepare, Train|`--chars_type`|you can choose characters type, "caps", "hiragana" or "caps,hiragana"|"caps"|
+|Train, Generate|`--gpu_ids`|GPU IDs you use. this type is string (ex. "0, 1")|(set automatically)|
 |Train, Generate|`--batch_size`|batch size for GAN|256|
-|Train|`--arch`|architect of GAN models. choose "DCGAN" or "ResNet"|"DCGAN"|
+|Train|`--arch`|architecture of GAN models. choose "DCGAN" or "ResNet"|"DCGAN"|
 |Train|`--style_ids_n`|# of style IDs|256|
 |Train|`--style_z_size`|size of style_z|100|
 |Train|`--gan_epoch_n`|# of epoch iterations|10000|
