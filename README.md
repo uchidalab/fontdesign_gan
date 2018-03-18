@@ -47,16 +47,21 @@ The auther checked running codes in only following environment:
 
 If you'd like to run with latest environment, revise some files as necessary.
 
+Firstly clone this repository.
+Add `--recursive` because this repository contains submodule ([font2img](https://github.com/uchidalab/font2img))
+```
+git clone --recursive https://github.com/uchidalab/fontdesign_gan
+cd fontdesign_gan
+```
+
 #### with Docker (GPU required)
 
 If you use GPU and Docker, it's easy to set up your environment.
 Requirement libraries are written in Dockerfile.  
 Install GPU Driver/[NVIDIA Docker](https://github.com/NVIDIA/nvidia-docker) and run following commands:
 ```
-git clone https://github.com/uchidalab/fontdesign_gan
-cd fontdesign_gan
 docker build -t fontdesign_gan .
-docker run --runtime=nvidia -it --rm -p 6006:6006 --volume `pwd`:/workdir fontdesign_gan bash
+docker run --runtime=nvidia -it --rm -p 6006:6006 --volume `pwd`:/workdir -w /workdir/ fontdesign_gan
 ```
 
 #### no Docker
@@ -113,7 +118,7 @@ A style ID correspond with a random matrix.
 A character ID correspond with a character.
 
 IDs are loaded in order, and you can use some operands.
-For example, if json file is following:
+For example, if JSON file is following:
 ```
 "style_ids": [
   "0", "4", "21", "10..29:5"
@@ -149,13 +154,13 @@ There are many options. Check following table.
 
 |For|Option|Description|Default|
 |:-|:-|:-|:-|
-|Prepare, Train|`--img_width`|width of images|64|
-|Prepare, Train|`--img_height`|height of images|64|
-|Prepare, Train|`--img_dim`|dimension of images|3|
-|Prepare, Train|`--chars_type`|you can choose characters type, "caps" or "hiragana"|"caps"|
-|Train, Generate|`--gpu_ids`|GPU IDs you use. This type is string (ex. "0, 1").|(set automatically)|
+|Prepare, Train|`--img_width`|width of images.|64|
+|Prepare, Train|`--img_height`|height of images.|64|
+|Prepare, Train|`--img_dim`|dimension of images.|3|
+|Prepare, Train|`--chars_type`|you can choose characters type, "caps", "hiragana" or "caps,hiragana"|"caps"|
+|Train, Generate|`--gpu_ids`|GPU IDs you use. this type is string (ex. "0, 1")|(set automatically)|
 |Train, Generate|`--batch_size`|batch size for GAN|256|
-|Train|`--arch`|architect of GAN models. choose "DCGAN" or "ResNet"|"DCGAN"|
+|Train|`--arch`|architecture of GAN models. choose "DCGAN" or "ResNet"|"DCGAN"|
 |Train|`--style_ids_n`|# of style IDs|256|
 |Train|`--style_z_size`|size of style_z|100|
 |Train|`--gan_epoch_n`|# of epoch iterations|10000|
