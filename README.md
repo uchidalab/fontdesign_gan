@@ -132,7 +132,7 @@ For example, if JSON file is following:
 ```
 Input IDs will be like this:
 ```
-style_ids = [0, 4, 21, (between 10 and 29 with 5 steps)]
+style_ids = [0, 5, 21, 37, (between 17 and 39 with 4 steps)]
 char_ids = [0, 1, 2, 3, 6, 6, 6, 6]
 ```
 and, # of result columns is 4. Also check sample files (`./jsons/sample*.json`).
