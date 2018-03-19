@@ -120,13 +120,15 @@ A character ID correspond with a character.
 IDs are loaded in order, and you can use some operands.
 For example, if JSON file is following:
 ```
-"style_ids": [
-  "0", "4", "21", "10..29:5"
-],
-"char_ids": [
-  "0-3", "6*4"
-],
-"col_n": 4
+{
+  "style_ids": [
+    "0", "5", "21", "37", "17..39:4"
+  ],
+  "char_ids": [
+    "0-3", "6*4"
+  ],
+  "col_n": 4
+}
 ```
 Input IDs will be like this:
 ```
@@ -141,6 +143,9 @@ python main.py --generate --gan_dir ./result/{trained} --ids ./jsons/sample01.js
 ```
 Generated fonts are saved in `./result/{trained}/generated/{YYYY-MM-DD_HHmmss}.png`.
 You can set output file name with `--gen_name`.
+
+Generated image is like this:
+![example_generate](sample/example_generate.png)
 
 If you want random walking fonts, use `--generate_walk`. A JSON file is needless.
 ```
