@@ -144,8 +144,8 @@ python main.py --generate --gan_dir ./result/{trained} --ids ./jsons/sample01.js
 Generated fonts are saved in `./result/{trained}/generated/{YYYY-MM-DD_HHmmss}.png`.
 You can set output file name with `--gen_name`.
 
-Generated image is like this:
-![example_generate](sample/example_generate.png)
+Generated image is like this:  
+![example_generate](samples/example_generate.png)
 
 If you want random walking fonts, use `--generate_walk`. A JSON file is needless.
 ```
